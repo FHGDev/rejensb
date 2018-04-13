@@ -17,7 +17,7 @@ bot.on('message', message => {
     if (message.content.startsWith("!changestatus")) {
       console.log("REJEN and/or Hulk used a cmd.")
       let [type, game] = args
-      bot.user.setActivity(game, {type: type.})
+      bot.user.setActivity(game, {type: type.toUppercase})
     }
   } else {
     return;
