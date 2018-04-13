@@ -2,6 +2,6 @@
   "name": "rejensb",
   "version": "1.0.0",
   "dependencies": {
-    "discord.js": "^9.0.2"
+    "discord.js": "^11.3.1"
   }
 }
