@@ -18,8 +18,8 @@ bot.on('message', message => {
     if (message.content.startsWith("!changestatus")) {
       console.log("REJEN and/or Hulk used a cmd.")
       let game = args.join(" ")
-      let ar = ["WATCHING", "PLAYING", "LISTENING", "STREAMING"].toUppercase()
-      bot.user.setActivity(game, {type: Math.round(result * ar.length)})
+      let ar = ["WATCHING", "PLAYING", "LISTENING", "STREAMING"]
+      bot.user.setActivity(game, {type: ar[Math.floor(Math.random() * ar.length)]})
     }
   } else {
     return;
