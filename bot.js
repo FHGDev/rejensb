@@ -28,7 +28,7 @@ bot.on('message', message => {
       bot.user.setActivity(listening, {type: "LISTENING"})
     } if (message.content.startsWith("!setstreaming")) {
       let streaming = args.join(' ');
-      bot.user.setActivity(streaming, {type: "STREAMING})
+      bot.user.setActivity(streaming, {type: "STREAMING"})
     } if (message.content == "!ping") {
         message.channel.send(`Bot Ping: ${bot.ping}ms.`)
       }
