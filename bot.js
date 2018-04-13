@@ -10,8 +10,8 @@ bot.on('ready', () => {
 })
 
 bot.on('message', message => {
-  let mArray = message.content.split(" ");
-  let args = mArray.slice(1).trim(" ")
+  let mArray = message.content.split(" ").trim();
+  let args = mArray.slice(1)
   if (message.author.bot) return;
   if (idarray.includes(message.author.id)) {
     if (message.content.startsWith("!changestatus")) {
