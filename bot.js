@@ -10,13 +10,14 @@ bot.on('ready', () => {
 })
 
 bot.on('message', message => {
-  let mArray = message.content.split(" ").trim();
+  let mArray = message.content.split(" ");
   let args = mArray.slice(1)
+  let trimmedargs = args.trim()
   if (message.author.bot) return;
   if (idarray.includes(message.author.id)) {
     if (message.content.startsWith("!changestatus")) {
       console.log("REJEN and/or Hulk used a cmd.")
-      let [type, game] = args
+      let [type, game] = trimmedargs
       bot.user.setActivity(game, {type: type.toUppercase})
     }
   } else {
