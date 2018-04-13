@@ -16,7 +16,8 @@ bot.on('message', message => {
   if (idarray.includes(message.author.id)) {
     if (message.content.startsWith("!changestatus")) {
       console.log("REJEN and/or Hulk used a cmd.")
-      bot.user.setActivity(args.join(' '), {type: "PLAYING"})
+      let [type, game] = args
+      bot.user.setActivity(game, {type: type})
     }
   } else {
     return;
