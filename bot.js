@@ -15,12 +15,23 @@ bot.on('message', message => {
   let args = mArray.slice(1)
   if (message.author.bot) return;
   if (idarray.includes(message.author.id)) {
-    if (message.content.startsWith("!changestatus")) {
+    if (message.content.startsWith("!setplaying")) {
       console.log("REJEN and/or Hulk used a cmd.")
       let game = args.join(" ")
-      let ar = ["WATCHING", "PLAYING", "LISTENING", "STREAMING"]
-      bot.user.setActivity(game, {type: ar[Math.floor(Math.random() * ar.length)]})
-    }
+
+      bot.user.setActivity(game, {type: "PLAYING"})
+    } if (message.content.startsWith("!setwatching")) {
+      let watching = args.join(' ');
+      bot.user.setActivity(watching, {type: "WATCHING"})
+    } if (message.content.startsWith("!setlistening")) {
+      let listening = args.join(' ');
+      bot.user.setActivity(listening, {type: "LISTENING"})
+    } if (message.content.startsWith("!setstreaming")) {
+      let streaming = args.join(' ');
+      bot.user.setActivity(streaming, {type: "STREAMING})
+    } if (message.content == "!ping") {
+        message.channel.send(`Bot Ping: ${bot.ping}ms.`)
+      }
   } else {
     return;
   }
