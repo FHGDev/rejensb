@@ -3,6 +3,6 @@ const bot = new discord.Client()
 bot.login(process.env.rtoken)
 
 bot.on('ready', () => {
-  bot.user.setGame(`Fallout 4`)
+  bot.user.setActivity(`Fallout 4`, {type: "PLAYING"})
   console.log("Bot ready.")
 })
