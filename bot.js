@@ -2,6 +2,7 @@ const discord = require('discord.js')
 const bot = new discord.Client()
 const idarray = ["369313004539346945", "242734840829575169"]
 bot.login(process.env.rtoken)
+let result = Math.random() * 2
 const prefix = "!"
 
 bot.on('ready', () => {
@@ -17,7 +18,8 @@ bot.on('message', message => {
     if (message.content.startsWith("!changestatus")) {
       console.log("REJEN and/or Hulk used a cmd.")
       let game = args.join(" ")
-      bot.user.setActivity(game, {type: "PLAYING"})
+      let ar = ["WATCHING", "PLAYING", "LISTENING", "STREAMING"].toUppercase()
+      bot.user.setActivity(game, {type: Math.round(result * ar.length)})
     }
   } else {
     return;
